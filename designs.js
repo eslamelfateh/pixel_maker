@@ -4,8 +4,6 @@ function getElement(id) {
 
 const sizePickerForm = getElement('sizePicker');
 const pixelCanvas = getElement('pixelCanvas');
-const row = getElement('inputHeight');
-const col = getElement('inputWidth');
 
 
 function handleColorPaint(e) {
@@ -15,12 +13,15 @@ function handleColorPaint(e) {
 }
 
 function makeGrid() {
+  const numberOfRows = getElement('inputHeight').value;
+  const numberOfCols = getElement('inputWidth').value;
+
   pixelCanvas.innerHTML = '';
 
-  for (let r = 0; r < row.value; r++) {
+  for (let r = 0; r < numberOfRows; r++) {
     const tr = document.createElement('tr');
 
-    for (let c = 0; c < col.value; c++) {
+    for (let c = 0; c < numberOfCols; c++) {
       const td = document.createElement('td');
 
       tr.appendChild(td);
