@@ -1,6 +1,6 @@
 // Function DOM SELECTOR
-function getElement(x) {
-  return document.getElementById(x);
+function getElement(id) {
+  return document.getElementById(id);
 }
 
 // Select size input
@@ -18,7 +18,8 @@ function colorPaint(e) {
 
 // Making Grid
 function makeGrid() {
-  pixelCanvas.innerHTML = ""; /* For clear */
+  pixelCanvas.innerHTML = "";
+  
   for (let r = 0; r < row.value; r++) {
     const tr = document.createElement('tr');
     for (let c = 0; c < col.value; c++) {
@@ -36,7 +37,7 @@ function makeGrid() {
 }
 
 // When size is submitted by the user, call makeGrid()
-getElement('sizePicker').addEventListener('submit', function(event) {
-  event.preventDefault();
+getElement('sizePicker').addEventListener('submit', function(e) {
+  e.preventDefault();
   makeGrid();
 });
