@@ -42,3 +42,7 @@ function makeGrid() {
 
 
 // When size is submitted by the user, call makeGrid()
+document.querySelector("form").addEventListener("submit", function (event) {
+  event.preventDefault();
+  makeGrid();
+});
