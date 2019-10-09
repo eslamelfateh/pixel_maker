@@ -1,15 +1,15 @@
 // Function DOM SELECTOR
-let select = function (x) {
-  return document.querySelector(x);
-};
+function getElement(x) {
+  return document.getElementById(x);
+}
 
 // Select size input
-const row = select("#inputHeight");
-const col = select("#inputWidth");
+const row = getElement('inputHeight');
+const col = getElement('inputWidth');
 
 // Select color input
-const colorPicker = select("#colorPicker");
-const pixelCanvas = select("#pixelCanvas");
+const colorPicker = getElement('colorPicker');
+const pixelCanvas = getElement('pixelCanvas');
 
 // Color Picker
 function colorPaint(e) {
@@ -18,31 +18,25 @@ function colorPaint(e) {
 
 // Making Grid
 function makeGrid() {
-  
-  pixelCanvas.innerHTML = "";  /* For clear */
-  
+  pixelCanvas.innerHTML = ""; /* For clear */
   for (let r = 0; r < row.value; r++) {
-    const tr = document.createElement("tr");
-    
+    const tr = document.createElement('tr');
     for (let c = 0; c < col.value; c++) {
-      const td = document.createElement("td");
+      const td = document.createElement('td');
       tr.appendChild(td);
     }
-    tr.addEventListener("click", colorPaint);
-    
+    tr.addEventListener('click', colorPaint);
     pixelCanvas.appendChild(tr);
-    
+
     // const fragment = document.createDocumentFragment();
-    // fragment.appendChild(tr);                                                     
+    // fragment.appendChild(tr);
   }
-  
   /*gridCanvas.appendChild(fragment);   
   (we can use fragment DOM Element creation for huge implementation in DOM for best performance )*/
 }
 
-
 // When size is submitted by the user, call makeGrid()
-document.querySelector("form").addEventListener("submit", function (event) {
+getElement('sizePicker').addEventListener('submit', function(event) {
   event.preventDefault();
   makeGrid();
 });
