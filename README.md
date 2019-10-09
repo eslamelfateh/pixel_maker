@@ -9,6 +9,6 @@
 
 To get started, open `designs.js` and start building out the app's functionality.
 
-https://pixlemaker.netlify.com/
+Online: https://pixlemaker.netlify.com/
 
 
