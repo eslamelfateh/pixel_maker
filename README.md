@@ -1,5 +1,7 @@
 # Pixel Art Maker Project
 
+Online: https://pixlemaker.netlify.com/
+
 ## Table of Contents
 
 * [Instructions](#instructions)
@@ -9,6 +11,5 @@
 
 To get started, open `designs.js` and start building out the app's functionality.
 
-Online: https://pixlemaker.netlify.com/
 
 
